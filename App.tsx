@@ -229,10 +229,10 @@ function SignInScreen({ navigation, route, onSignIn }: NativeStackScreenProps<Ro
         value={password}
         onChangeText={setPassword}
       />
-      <TouchableOpacity style={styles.primaryButton} onPress={submit}>
+      <TouchableOpacity style={styles.primaryButton2} onPress={submit}>
         <Text style={styles.primaryButtonText}>Sign in</Text>
       </TouchableOpacity>
-      <Text style={{ marginTop: 8, color: '#444' }}>Forgot password?</Text>
+      <Text style={{ marginTop: 8, color: '#605a37' }}>Forgot password?</Text>
     </KeyboardAvoidingView>
   );
 }
@@ -250,8 +250,8 @@ function HomeScreen({ navigation, onSignOut }: any) {
       <TouchableOpacity style={styles.tile} onPress={() => navigation.navigate('Notes')}>
         <Text style={styles.tileText}>🗒 Notes</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.tile, { backgroundColor: '#eee' }]} onPress={() => { onSignOut(); navigation.replace('SignIn'); }}>
-        <Text style={{ color: '#333' }}>Sign out</Text>
+      <TouchableOpacity style={[styles.tile, { backgroundColor: '#8aba73' }]} onPress={() => { onSignOut(); navigation.replace('SignIn'); }}>
+        <Text style={styles.tileText}>Sign out</Text>
       </TouchableOpacity>
     </View>
   );
@@ -312,7 +312,7 @@ function FlashcardsScreen({ navigation, studySets, onAddSet, onAddCard, onDelete
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <TouchableOpacity style={{ alignSelf: 'flex-start' }} onPress={() => navigation.goBack()}>
-        <Text style={{ color: '#06f' }}>← Back</Text>
+        <Text style={{ color: '#605a37' }}>← Back</Text>
       </TouchableOpacity>
 
       <View style={styles.rowCenter}>
@@ -351,7 +351,7 @@ function FlashcardsScreen({ navigation, studySets, onAddSet, onAddCard, onDelete
           <TextInput style={styles.input} value={editAnswer} onChangeText={setEditAnswer} placeholder="Answer" />
           <View style={styles.rowCenter}>
             <TouchableOpacity style={styles.smallButton} onPress={saveEdit}><Text>Save</Text></TouchableOpacity>
-            <TouchableOpacity style={[styles.smallButton, { backgroundColor: '#f66' }]} onPress={() => setIsEditing(false)}><Text style={{ color: '#fff' }}>Cancel</Text></TouchableOpacity>
+            <TouchableOpacity style={[styles.smallButton, { backgroundColor: '#8aba73' }]} onPress={() => setIsEditing(false)}><Text style={{ color: '#3c4526' }}>Cancel</Text></TouchableOpacity>
           </View>
         </View>
       )}
@@ -390,7 +390,7 @@ function TimerScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={{ alignSelf: 'flex-start' }} onPress={() => navigation.goBack()}>
-        <Text style={{ color: '#06f' }}>← Back</Text>
+        <Text style={{ color: '#605a37' }}>← Back</Text>
       </TouchableOpacity>
 
       <Text style={styles.h2}>Timer</Text>
@@ -409,7 +409,7 @@ function TimerScreen({ navigation }: any) {
         <TouchableOpacity style={styles.primaryButton} onPress={() => setRunning((r) => !r)}>
           <Text style={styles.primaryButtonText}>{running ? 'Pause' : 'Start'}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.primaryButton, { backgroundColor: '#f66' }]} onPress={reset}><Text style={{ color: '#fff' }}>Reset</Text></TouchableOpacity>
+        <TouchableOpacity style={[styles.primaryButton, { backgroundColor: '#8aba73' }]} onPress={reset}><Text style={{ color: '#3c4526' }}>Reset</Text></TouchableOpacity>
       </View>
     </View>
   );
@@ -419,7 +419,7 @@ function NotesScreen({ navigation, notes, createNote, updateNote, deleteNote }: 
   return (
     <View style={styles.container}>
       <TouchableOpacity style={{ alignSelf: 'flex-start' }} onPress={() => navigation.goBack()}>
-        <Text style={{ color: '#06f' }}>← Back</Text>
+        <Text style={{ color: '#605a37' }}>← Back</Text>
       </TouchableOpacity>
 
       <Text style={styles.h2}>Notes</Text>
@@ -441,7 +441,7 @@ function NotesScreen({ navigation, notes, createNote, updateNote, deleteNote }: 
               <Text style={{ fontWeight: '700' }}>{item.title}</Text>
               <Text numberOfLines={4} style={{ marginTop: 6 }}>{item.content}</Text>
               <TouchableOpacity style={styles.noteDelete} onPress={() => deleteNote(item.id)}>
-                <Text style={{ color: '#fff' }}>Delete</Text>
+                <Text style={{ color: '#3c4526' }}>Delete</Text>
               </TouchableOpacity>
             </TouchableOpacity>
           )}
@@ -475,7 +475,7 @@ function NoteEditorScreen({ route, navigation, notes, createNote, updateNote, de
   return (
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
       <TouchableOpacity style={{ alignSelf: 'flex-start' }} onPress={() => navigation.goBack()}>
-        <Text style={{ color: '#06f' }}>← Back</Text>
+        <Text style={{ color: '#3c4526' }}>← Back</Text>
       </TouchableOpacity>
 
       <TextInput style={styles.input} value={title} onChangeText={setTitle} placeholder="Title" />
@@ -495,11 +495,11 @@ function NoteEditorScreen({ route, navigation, notes, createNote, updateNote, de
       />
 
       <View style={styles.rowCenter}>
-        <TouchableOpacity style={[styles.primaryButton, { backgroundColor: '#f66' }]} onPress={() => {
+        <TouchableOpacity style={[styles.primaryButton, { backgroundColor: '#8aba73' }]} onPress={() => {
           if (note) deleteNote(note.id);
           navigation.goBack();
         }}>
-          <Text style={{ color: '#fff' }}>Delete</Text>
+          <Text style={{ color: '#3c4526' }}>Delete</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.primaryButton} onPress={() => navigation.goBack()}>
           <Text style={styles.primaryButtonText}>Done</Text>
@@ -513,30 +513,31 @@ function NoteEditorScreen({ route, navigation, notes, createNote, updateNote, de
 // Styles
 // -------------------------
 const styles = StyleSheet.create({
-  centerContainer: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20 },
-  container: { flex: 1, alignItems: 'center', padding: 16, backgroundColor: '#f0f7ef' },
-  logo: { fontSize: 36, fontWeight: '800', marginBottom: 12 },
-  input: { width: '100%', backgroundColor: '#fff', padding: 12, borderRadius: 10, marginBottom: 10 },
-  primaryButton: { backgroundColor: '#2e8b57', paddingVertical: 12, paddingHorizontal: 18, borderRadius: 10 },
-  primaryButtonText: { color: '#fff', fontWeight: '700' },
-  homeTitle: { fontSize: 24, fontWeight: '800', marginBottom: 16 },
-  tile: { width: '100%', backgroundColor: '#9bd29a', padding: 18, borderRadius: 12, marginBottom: 12, alignItems: 'center' },
-  tileText: { fontSize: 18, fontWeight: '700' },
+  centerContainer: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20, backgroundColor: '#d2e6ae' },
+  container: { flex: 1, alignItems: 'center', padding: 16, backgroundColor: '#d2e6ae' },
+  logo: { fontSize: 36, fontWeight: '800', marginBottom: 12, color: '#605a37' },
+  input: { width: '100%', backgroundColor: '#f6f5d6', padding: 12, borderRadius: 10, marginBottom: 10 },
+  primaryButton: { backgroundColor: '#8aba73', paddingVertical: 12, paddingHorizontal: 25, borderRadius: 10, padding: 8, alignItems: 'center', flex: 1, marginHorizontal: 40  },
+  primaryButton2: { backgroundColor: '#8aba73', paddingVertical: 12, paddingHorizontal: 25, borderRadius: 10, padding: 8, alignItems: 'center', marginHorizontal: 40  },
+  primaryButtonText: { color: '#3c4526', fontWeight: '700' },
+  homeTitle: { fontSize: 24, fontWeight: '800', marginBottom: 56, color: '#3c4526' },
+  tile: { width: '100%', backgroundColor: '#8aba73', padding: 18, borderRadius: 12, marginBottom: 55, alignItems: 'center' },
+  tileText: { fontSize: 18, fontWeight: '700', color: '#3c4526' },
   h2: { fontSize: 20, fontWeight: '700', marginVertical: 12 },
   rowCenter: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 12 },
-  arrow: { fontSize: 22, paddingHorizontal: 12 },
-  smallButton: { backgroundColor: '#6fbf73', padding: 10, borderRadius: 8, alignSelf: 'flex-start', marginBottom: 8 },
-  smallButtonText: { color: '#fff', fontWeight: '700' },
-  card: { width: '100%', minHeight: 180, backgroundColor: '#fff', borderRadius: 12, alignItems: 'center', justifyContent: 'center', padding: 20, marginVertical: 12, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 6 },
+  arrow: { fontSize: 22, paddingHorizontal: 12, color: '#605a37' },
+  smallButton: { backgroundColor: '#8aba73', padding: 10, borderRadius: 8, alignSelf: 'flex-start', marginBottom: 8 },
+  smallButtonText: { color: '#3c4526', fontWeight: '700' },
+  card: { width: '100%', minHeight: 180, backgroundColor: '#f6f5d6', borderRadius: 12, alignItems: 'center', justifyContent: 'center', padding: 20, marginVertical: 12, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 6 },
   cardText: { fontSize: 18, textAlign: 'center' },
-  modal: { width: '100%', backgroundColor: '#fff', padding: 12, borderRadius: 10, marginTop: 12 },
-  timeInput: { width: 70, backgroundColor: '#fff', padding: 8, borderRadius: 8, textAlign: 'center' },
+  modal: { width: '100%', backgroundColor: '#f6f5d6', padding: 12, borderRadius: 10, marginTop: 12 },
+  timeInput: { width: 70, backgroundColor: '#f6f5d6', padding: 8, borderRadius: 8, textAlign: 'center' },
   timeSep: { fontSize: 20, marginHorizontal: 8 },
   timerLarge: { fontSize: 36, fontWeight: '800', marginVertical: 12 },
-  newNoteButton: { backgroundColor: '#ffd98a', padding: 12, borderRadius: 10, marginVertical: 12, alignItems: 'center' },
+  newNoteButton: { backgroundColor: '#8aba73', padding: 12, borderRadius: 10, marginVertical: 12, alignItems: 'center' },
   newNoteText: { fontWeight: '700' },
-  noteCard: { backgroundColor: '#fff', padding: 12, borderRadius: 10, margin: 8, flex: 1, minWidth: 140, maxWidth: '48%', position: 'relative' },
-  noteDelete: { position: 'absolute', right: 8, bottom: 8, backgroundColor: '#e55353', padding: 6, borderRadius: 6 },
+  noteCard: { backgroundColor: '#f6f5d6', padding: 12, borderRadius: 10, margin: 8, flex: 1, minWidth: 140, maxWidth: '48%', position: 'relative' },
+  noteDelete: { position: 'absolute', right: 8, bottom: 8, backgroundColor: '#8aba73', padding: 6, borderRadius: 6 },
   templateRow: { flexDirection: 'row', justifyContent: 'space-between', width: '100%', marginVertical: 8 },
-  templateButton: { backgroundColor: '#eee', padding: 8, borderRadius: 8, flex: 1, alignItems: 'center', marginHorizontal: 4 },
+  templateButton: { backgroundColor: '#8aba73', padding: 8, borderRadius: 8, flex: 1, alignItems: 'center', marginHorizontal: 4 },
 });
