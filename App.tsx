@@ -437,7 +437,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: '#E6F4FE',
+    backgroundColor: '#d2e6ae',
     alignItems: 'center',
     justifyContent: 'flex-start',
     padding: 20,
@@ -453,27 +453,27 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 40,
-    color: '#0B3954',
+    color: '#3c4526',
   },
   homeButton: {
     width: '80%',
-    padding: 18,
-    backgroundColor: '#0878D0',
+    padding: 35,
+    backgroundColor: '#8aba73',
     borderRadius: 16,
-    marginVertical: 10,
+    marginVertical: 12,
   },
   homeButtonText: {
-    color: 'white',
+    color: '#3c4526',
     fontSize: 20,
     fontWeight: '600',
     textAlign: 'center',
   },
 
   backButton: {
+    padding: 35,
     fontSize: 18,
     color: '#0878D0',
-    marginBottom: 10,
-    alignSelf: 'flex-start',
+    marginBottom: 12,   
   },
 
   // Shared
@@ -481,11 +481,11 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 20,
-    color: '#0B3954',
+    color: '#605a37',
     textAlign: 'center',
   },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: '#f6f5d6',
     borderRadius: 10,
     padding: 12,
     marginBottom: 10,
@@ -493,30 +493,30 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   addButton: {
-    backgroundColor: '#0878D0',
-    paddingVertical: 12,
-    borderRadius: 10,
+    backgroundColor: '#8aba73',
+    paddingVertical: 13,
+    borderRadius: 6,
     alignItems: 'center',
     marginBottom: 10,
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
+    color: '#3c4526',
+    fontSize: 15,
+    fontWeight: '700',
   },
   button: {
-    backgroundColor: '#0878D0',
+    backgroundColor: '#8aba73',
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 10,
   },
   reset: {
-    backgroundColor: '#6C757D',
+    backgroundColor: '#8aba73',
   },
 
   // Flashcards
   flashcard: {
-    backgroundColor: '#fff',
+    backgroundColor: '#f6f5d6',
     borderRadius: 12,
     padding: 20,
     width: '100%',
@@ -548,22 +548,22 @@ const styles = StyleSheet.create({
   },
   arrowText: {
     fontSize: 24,
-    color: '#0B3954',
+    color: '#605a37',
   },
   studySetTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#0B3954',
+    color: '#605a37',
   },
   deleteButton: {
-    backgroundColor: '#FF5C5C',
+    backgroundColor: '#8aba73',
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 15,
     marginBottom: 10,
   },
   deleteText: {
-    color: '#fff',
+    color: '#3c4526',
     fontWeight: '600',
     fontSize: 16,
   },
@@ -572,12 +572,12 @@ const styles = StyleSheet.create({
   timer: {
     fontSize: 60,
     fontWeight: 'bold',
-    color: '#0B3954',
+    color: '#3c4526',
     marginBottom: 20,
   },
   buttons: {
     flexDirection: 'row',
-    gap: 20,
+    gap: 25,
     marginBottom: 30,
   },
 });
